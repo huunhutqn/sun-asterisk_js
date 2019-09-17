@@ -1,0 +1,101 @@
+//- footer page
+include ../mixins/socialfooter.pug
+include ../mixins/navfooter.pug
+
+footer.footer
+  .footer__container
+    .footer__subcribe
+      .footer__subcribe__container.max-src.margin-auto
+        .footer__subcribe__social
+          .footer__subcribe__social__label.uppercase.green-label
+            |Kênh thông tin từ chúng tôi
+          .footer__subcribe__social__icon
+            +socialf("#","fa-facebook")
+            +socialf("#","fa-twitter")
+            +socialf("#","fa-youtube-play")
+            +socialf("#","fa-vimeo")
+        .footer__subcribe__email
+          .footer__subcribe__email__label.uppercase.green-label
+            |Đăng ký nhận email từ chúng tôi
+          .footer__subcribe__email__form
+            .footer__subcribe__email__form__input
+              input(type="email") 
+            .footer__subcribe__email__form__button
+              button(type="submit")
+                i.fa.fa-paper-plane(aria-hidden="true")
+    .footer__info
+      .footer__info__container.max-src.margin-auto
+        .footer__info__desc
+          .footer__info__desc__container
+            .footer__info__desc__logo
+              img.footer__info__desc__logo__img(src= footer_logo_url)
+            .footer__info__desc__intro
+              p.footer__info__desc__intro__text #{footer_desc_intro}
+            .footer__info__desc__contact
+              .footer__info__desc__contact__phone
+                i.fa.fa-mobile(aria-hidden="true")
+                |Điện thoại: 
+                a(href="tel:"+ phone_num) #{phone_num}
+              .footer__info__desc__contact__email
+                i.fa.fa-envelope-o(aria-hidden="true")
+                |Email: 
+                a(href="mailto:"+ email) #{email}
+        .footer__info__client
+          .footer__info__client__container 
+            .footer__info__client__label.uppercase.green-label
+              |Thông tin khách hàng
+            .footer__info__client__nav
+              +navfooter('footer__info__client__nav__menu',
+                        'footer__info__client__nav__menu__item',
+                        'footer__info__client__nav__menu__item__icon',
+                        'footer__info__client__nav__menu__item__link',
+                        nav_client)
+        .footer__info__service
+          .footer__info__service__container
+            .footer__info__service__label.uppercase.green-label
+              |Hỗ trợ dịch vụ
+            .footer__info__service__nav
+              +navfooter('footer__info__service__nav__menu',
+                        'footer__info__service__nav__menu__item',
+                        'footer__info__service__nav__menu__item__icon',
+                        'footer__info__service__nav__menu__item__link',
+                        nav_service)
+        .footer__info__policy
+          .footer__info__policy__container
+            .footer__info__policy__label.uppercase.green-label
+              |Chính sách ưu đãi
+            .footer__info__policy__nav
+              +navfooter('footer__info__policy__nav__menu',
+                        'footer__info__policy__nav__menu__item',
+                        'footer__info__policy__nav__menu__item__icon',
+                        'footer__info__policy__nav__menu__item__link',
+                        nav_policy)
+        .footer__info__news
+          .footer__info__news__container
+            .footer__info__news__label.uppercase.green-label
+              |Tin tức
+            .footer__info__news__nav
+              +navfooter('footer__info__news__nav__menu',
+                        'footer__info__news__nav__menu__item',
+                        'footer__info__news__nav__menu__item__icon',
+                        'footer__info__news__nav__menu__item__link',
+                        nav_news)
+    .footer__nav
+      .footer__nav__container.max-src.margin-auto
+        .footer__nav__hotlink
+          .footer__nav__hotlink__nav
+            +navfooter('footer__nav__hotlink__nav__menu',
+                      'footer__nav__hotlink__nav__menu__item',
+                      'hidden',
+                      'footer__nav__hotlink__nav__menu__item__link',
+                      nav_hotlink)
+        .footer__nav__payment
+          .footer__nav__payment__nav
+            +paymentfooter('footer__nav__payment__nav__menu',
+                      'footer__nav__payment__nav__menu__item',
+                      'footer__nav__payment__nav__menu__item__link',
+                      'footer__nav__payment__nav__menu__item__link__icon',
+                      nav_payment)
+    .footer__copyright
+      .footer__copyright__container.text-center
+        span.footer__copyright__text #{footer_copyright}

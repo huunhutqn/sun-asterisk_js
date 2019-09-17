@@ -1,0 +1,51 @@
+//- mixins for product
+mixin blockproduct(listproduct)
+  - var count = Object.keys(listproduct).length + 1;
+  - var counts = count - 1;
+  each vals in listproduct
+    .block__item(class="item-no" + (count - counts--))
+      .block__item__info-top
+        .block__item__info-top__image
+          img(src="../../images/sp/" + vals.img)
+        case vals.desc
+          when 'NEW'
+            .block__item__info-top__desc.label-pr-new
+              span NEW
+          when 'null'
+            |
+          default
+            .block__item__info-top__desc.label-pr-saleoff
+              span #{vals.desc}
+        .block__item__info-top__buy
+          button.--buy-now.btn-buy-now.uppercase
+            | Mua ngay
+          a(href= vals.url).--more-info.btn-more-pr-info
+            i.fa.fa-search(aria-hidden="true")
+        .block__item__info-top__cover
+      .block__item__info-bot
+        .block__item__info-bot__title
+          h4 #{vals.title}
+        .block__item__info-bot__rating
+          - var i = 0;
+          - for(i = 1; i <= vals.rating; i++)
+            - if(i%2 == 0)
+              i.fa.fa-star(aria-hidden="true")
+          - i--
+          - if(i%2 != 0)
+              i.fa.fa-star-half-o(aria-hidden="true")
+              - i++
+          - for(i = i; i < 10; i++)
+            - if(i%2 == 0)
+              i.fa.fa-star-o(aria-hidden="true")
+        if vals.long_desc
+          p.block__item__info-bot__long-desc= vals.long_desc
+        .block__item__info-bot__price
+          span.--price-new #{vals.price}.000 đ
+          span.--price-old #{vals.old_price}.000 đ
+        .block__item__info-bot__buy
+          button.--buy-now.btn-buy-now.uppercase
+            | Mua ngay
+          a(href= vals.url).--more-info.btn-more-pr-info
+            i.fa.fa-search(aria-hidden="true")
+          a(href="#").--love-product.btn-love-pr
+            i.fa.fa-heart(aria-hidden="true")

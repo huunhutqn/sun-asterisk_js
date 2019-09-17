@@ -1,0 +1,64 @@
+//- header page
+include ../mixins/headermixin.pug
+
+header.header
+  .header__container
+    section.header__top
+      .header__top__container
+        .header__top__bar
+          .header__top__bar__container.max-src.margin-auto
+            .header__top__bar__left
+              .header__top__bar__left__time
+                i.fa.fa-clock-o(aria-hidden="true")
+                span #{open_time}
+              .header__top__bar__left__social
+                +socialh("#","fa-facebook")
+                +socialh("#","fa-twitter")
+                +socialh("#","fa-tumblr")
+                +socialh("#","fa-vimeo")
+            .header__top__bar__right
+              .header__top__bar__right__login
+                i.fa.fa-user(aria-hidden="true")
+                span Đăng nhập
+              .header__top__bar__right__logout
+                i.fa.fa-user-plus(aria-hidden="true")
+                span Đăng ký
+        .header__top__mid
+          .header__top__mid__container.max-src.margin-auto
+            .header__top__mid__left
+              .header__top__mid__left__slogan
+                img.header__top__mid__left__slogan__img.slogan-green(src= header_logo_url_green)
+                img.header__top__mid__left__slogan__img.slogan-black(src= header_logo_url_black)
+              .header__top__mid__left__img
+                img.header__top__mid__left__img__img(src= header_flower_url)
+            .header__top__mid__right
+              .header__top__mid__right__above
+                i.fa.fa-phone(aria-hidden="true")
+                span HỖ TRỢ: 
+                a(href="tel: " + phonesp1).header__top__mid__right__above__link #{phonesp1}
+                | &nbsp;
+                a(href="tel: " + phonesp2).header__top__mid__right__above__link #{phonesp2}
+              .header__top__mid__right__below
+                .header__top__mid__right__below__search
+                  input.header__top__mid__right__below__search__input(placeholder="Tìm kiếm")
+                  button.header__top__mid__right__below__search__submit-btn
+                    i.fa.fa-search(aria-hidden="true")
+                .header__top__mid__right__below__cart
+                  i.fa.fa-shopping-basket.header__top__mid__right__below__cart__icon
+                  span.header__top__mid__right__below__cart__total 0 Sản phẩm
+        .header__top__bot
+          .header__top__bot__container.max-src.margin-auto
+            .header__top__bot__button
+              .header__top__bot__button__menu
+                i.fa.fa-bars(aria-hidden="true")
+              .header__top__bot__button__utilities
+                i.fa.fa-search(aria-hidden="true")
+                i.fa.fa-shopping-basket(aria-hidden="true")
+            .header__top__bot__nav
+              ul.header__top__bot__nav__menu
+                +navheader(nav_header)
+    section.header__slide
+      - if(!hide_slide)
+        .header__slide__container
+            img.header__slide__img.slide-notext(src= header_slide_nt_img)
+            img.header__slide__img.slide-text(src= header_slide_img)

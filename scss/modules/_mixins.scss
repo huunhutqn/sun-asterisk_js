@@ -1,0 +1,101 @@
+// mixin is mixin
+
+// size
+@mixin fullwidth {
+  width: 100%;
+}
+@mixin px($size) {
+  padding-left: $size;
+  padding-right: $size;
+}
+@mixin py($size) {
+  padding-top: $size;
+  padding-bottom: $size;
+}
+@mixin my($size) {
+  margin-top: $size;
+  margin-bottom: $size;
+}
+@mixin lineH($size) {
+  line-height: $size;
+}
+
+// display
+@mixin grid {
+  display: grid;
+  @include fullwidth;
+}
+@mixin gridtemplate($template, $row: 0, $col: 0) {
+  @include grid;
+  grid-template-areas: $template;
+  @if $row != 0 {
+    grid-template-rows: $row;
+  }
+  @if $col != 0 {
+    grid-template-columns: $col;
+  }
+}
+@mixin gridtemplates($template: 0, $row: 0, $col: 0, $rowgap: 0, $colgap: 0) {
+  @include grid;
+  @if $template != 0 {
+    grid-template-areas: $template;
+  }
+  @if $row != 0 {
+    grid-template-rows: $row;
+  }
+  @if $col != 0 {
+    grid-template-columns: $col;
+  }
+  @if $rowgap != 0 {
+    row-gap: $rowgap;
+  }
+  @if $colgap != 0 {
+    column-gap: $colgap;
+  }
+}
+
+// footer
+@mixin navfooter {
+  &__icon {
+    font-size: 10px;
+    margin-right: 2px;
+  }
+  &__link {
+    @include lineH(37px);
+  }
+}
+@mixin navfooter-label {
+  font-size: 14px;
+  font-weight: bold;
+  @include lineH(20px);
+  margin-bottom: 15px;
+}
+%grid-sm-item {
+        .block__item__info-top {
+          &__desc {
+            display: none;
+          }
+        }
+        .block__item__info-bot {
+          @include py(15px);
+          &__title {
+            h4 {
+              font-size: 11px;
+            }
+          }
+          &__rating {
+            .fa {
+              font-size: 9.5px;
+            }
+          }
+          &__price {
+            .--price-new {
+              font-size: 12.03px;
+              margin-right: 8px;
+            }
+            .--price-old {
+              font-size: 10px;
+            }
+          }
+        }
+      }

@@ -1,0 +1,32 @@
+//- register page
+extends ../includes/layout
+include ../mixins/inputmixin
+
+block head
+  - var page_name = 'Green Shop - Đăng ký';
+  - var hide_slide = 1;
+  +head(page_name)
+block main
+  main.register
+    .register__container.max-src.margin-auto
+      - var class_has_cate = 'register';
+      - var cate_name = 'Đăng ký';
+      include ../includes/catepage
+      .register__form
+        .register__form__title
+          h4.uppercase Thông tin cá nhân
+        .register__form__info
+          +inputmixin('register__form__info','Họ và tên','text')
+          +inputmixin('register__form__info','Số ĐT','text')
+          +inputmixin('register__form__info','Địa chỉ email','email')
+          +inputmixin('register__form__info','Website của bạn','text')
+          +inputmixin('register__form__info','Đăng ký nhận thông tin qua email','checkbox')
+        .register__form__title
+          h4.uppercase Thông tin tài khoản
+        .register__form__account
+          +inputmixin('register__form__account','Mật khẩu','password')
+          +inputmixin('register__form__account','Nhắc lại mật khẩu','password')
+        .register__form__action
+          button.register__form__action__back.uppercase Quay lại
+          button.register__form__action__submit.uppercase Đăng ký
+

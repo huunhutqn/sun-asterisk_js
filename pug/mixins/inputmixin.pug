@@ -1,0 +1,14 @@
+//- mixins for inputs register/login/contact page
+mixin inputmixin(parent_class,label,input_type)
+  div(class= parent_class + "__field")
+    case input_type
+      when 'checkbox'
+        input(class= parent_class + "__field__input --input-checkbox" type= input_type)
+        span
+        label(class= parent_class + "__field__label")= label
+      when 'textarea'
+        label(class= parent_class + "__field__label")= label
+        textarea(class= parent_class + "__field__input" rows="5")
+      default
+        label(class= parent_class + "__field__label")= label
+        input(class= parent_class + "__field__input" type= input_type)

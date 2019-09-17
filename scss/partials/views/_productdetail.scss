@@ -1,0 +1,278 @@
+// style product detail page
+
+.product-detail {
+  &__container {
+    @include px(15px);
+    padding-bottom: 50px;
+    padding-top: 20px;
+  }
+  &__cate-path {
+    margin-bottom: 55px;
+  }
+  &__info {
+    @include gridtemplates("info-image info-features",0,5fr 7fr,0,25px);
+    margin-bottom: 100px;
+    &__image {
+      grid-area: info-image;
+      @include gridtemplates(0,0,0,25px,0);
+      &__featured {
+        img {
+          width: 100%;
+        }
+      }
+      &__gallery {
+        @include gridtemplates(0,0,1fr 1fr 1fr 1fr 1fr,0,10px);
+        img {
+          width: 100%;
+        }
+      }
+    }
+    &__features {
+      grid-area: info-features;
+      padding-top: 15px;
+      &__item {
+        &__title {
+          font-size: 18px;
+          font-family: "Roboto";
+          color: $black-icon-search;
+          margin-bottom: 10px;
+          display: block;
+        }
+        &__rating {
+          margin-bottom: 15px;
+          .fa {
+            color: $yellow-rating;
+            font-size: 11px;
+          }
+        }
+        &__price {
+          margin-bottom: 15px;
+          .--price-new {
+            font-size: 18px;
+            color: $red-price;
+            margin-right: 10px;
+          }
+          .--price-old {
+            font-size: 14px;
+            color: $grey-price;
+          }
+        }
+        &__long-desc {
+          @include py(18px);
+          margin-bottom: 0;
+          border-top: 1px solid $grey-border-figure;
+          font-size: 12px;
+          color: $grey-text1;
+        }
+        &__num {
+          @include py(18px);
+          margin-bottom: 0;
+          border-top: 1px solid $grey-border-figure;
+          font-size: 14px;
+          span {
+            margin-right: 20px;
+          }
+          input:not(:last-of-type) {
+            margin-right: 5px;
+          }
+          input {
+            text-align: center;
+            height: 40px;
+            border: 1px solid $grey-border-figure;
+            background-color: $white;
+          }
+          .--btn-sub, .--btn-add {
+            width: 40px;
+          }
+          .--input-num {
+            width: 70px;
+          }
+        }
+        &__buy {
+          @include py(18px);
+          margin-bottom: 0;
+          border-top: 1px solid $grey-border-figure;
+          display: flex;
+          align-items: center;
+          .btn-buy-now {
+            cursor: pointer;
+            background-color: $green-theme;
+            color: $white;
+            font-size: 13px;
+            padding: 13px 36px;
+            border-radius: 23px;
+            margin-right: 12px;
+            &:hover {
+              background-color: $green-button;
+              color: $white;
+            }
+          }
+          .btn-more-pr-info, %btn-heart {
+            background-color: $white;
+            display: flex;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid $grey-border-figure;
+            justify-content: center;
+            align-items: center;
+            &:hover {
+              background-color: $grey-text;
+              .fa {
+                color: $white;
+              }
+            }
+            .fa {
+              color: $black-icon-search;
+            }
+          }
+          .btn-love-pr {
+            @extend %btn-heart;
+            margin-left: 12px;
+            &:hover {
+              background-color: $red-discount;
+            }
+          }
+        }
+        &__social {
+          display: flex;
+          align-items: baseline;
+          a {
+            img {
+              // width: 100%;
+            }
+          }
+          label {
+            margin-bottom: 0;
+            position: relative;
+            font-size: 10px;
+            margin-left: 2px;
+            line-height: 20px;
+            border: 1px solid $grey-border-figure;
+            @include px(6px);
+            border-radius: 4px;
+            &::before {
+              content: "";
+              height: 5px;
+              position: absolute;
+              left: -5px;
+              top: 5px;
+              border-top: 5px solid transparent;
+              border-right: 5px solid #e7e7e7;
+              border-bottom: 5px solid transparent;
+            }
+          }
+          .--btn-fb {
+            margin-right: 3px;
+          }
+          .--btn-tw {
+            @extend .--btn-fb;
+          }
+          .--btn-ggp {
+            margin-right: 35px;
+          }
+        }
+      }
+    }
+  }
+  &__desc {
+    position: relative;
+    margin-bottom: 60px;
+    &__tab {
+      position: relative;
+      z-index: 5;
+      margin-bottom: -1px;
+      a {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 35px;
+        color: $black-footer;
+        @include px(50px);
+        &.--tab-active {
+          color: $green-theme;
+          border-left: 1px solid $grey-border-figure;
+          border-right: 1px solid $grey-border-figure;
+          border-top: 2px solid $grey-copyright;
+          background-color: $white;
+        }
+      }
+    }
+    &__text {
+      p {
+        padding: 40px;
+        font-size: 12px;
+        color: $grey-text1;
+        white-space: pre-wrap;
+        border: 1px solid $grey-border-figure;
+      }
+    }
+  }
+  &__similar {
+    position: relative;
+    &__block {
+      @include gridtemplates(0,0,1fr 1fr 1fr 1fr,0,30px);
+    }
+  }
+  @media (max-width: #{map-get($breakpoints, "sm")}) {
+    &__info {
+      @include gridtemplates("info-image info-image"
+                            "info-features info-features",0,0,20px,0);
+    }
+    &__desc {
+      &__tab {
+        a {
+          @include px(15px);
+        }
+      }
+    }
+  }
+  @media (max-width: #{map-get($breakpoints, "m")}) {
+    &__similar {
+      &__block {
+        @include gridtemplates(0,0,1fr 1fr,30px,0);
+      }
+    }
+  }
+  @media (max-width: #{map-get($breakpoints, "s")}) {
+    &__desc {
+      &__tab {
+        a {
+          @include px(10px);
+        }
+      }
+    }
+    &__similar {
+      .block__item {
+        &__info-top {
+          &__desc {
+            display: none;
+          }
+        }
+        &__info-bot {
+          &__price {
+            span {
+              display: block;
+            }
+            .--price-new {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: #{map-get($breakpoints, "xs")}) {
+    &__desc {
+      &__tab {
+        a {
+          display: block;
+          border-left: 1px solid $grey-border-figure;
+          border-top: 2px solid $grey-border-figure;
+          background-color: $white;
+          border-right: 1px solid $grey-border-figure;
+          color: $grey-text;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+
+extends ../includes/layout
+include ../mixins/inputmixin
+
+block head
+  - var page_name = 'Green Shop - Liên hệ';
+  - var hide_slide = 1;
+  +head(page_name)
+block main
+  main.contact
+    .contact__container
+      - var class_has_cate = 'contact';
+      - var cate_name = 'Liên hệ';
+      include ../includes/catepage
+      .contact__map.margin-auto
+        img(src= map_img)
+      .contact__form.max-src.margin-auto
+        .contact__form__container
+          .contact__form__title
+            h4.uppercase Thông tin liên hệ
+          .contact__form__info
+            +inputmixin('contact__form__info','Họ và tên','text')
+            +inputmixin('contact__form__info','Địa chỉ email','email')
+            +inputmixin('contact__form__info','Số ĐT','text')
+            +inputmixin('contact__form__info','Bình luận','textarea')
+            .contact__form__info__action
+              button.contact__form__info__action__submit.uppercase Gửi tin nhắn
+        .contact__form__desc
+          .contact__form__desc__logo
+            img.contact__form__desc__logo__img(src= footer_logo_url)
+          .contact__form__desc__intro
+            p.contact__form__desc__intro__text #{footer_desc_intro}
+          .contact__form__desc__contact
+            .contact__form__desc__contact__phone
+              i.fa.fa-mobile(aria-hidden="true")
+              |Điện thoại: 
+              a(href="tel:"+ phone_num) #{phone_num}
+            .contact__form__desc__contact__email
+              i.fa.fa-envelope-o(aria-hidden="true")
+              |Email: 
+              a(href="mailto:"+ email) #{email}

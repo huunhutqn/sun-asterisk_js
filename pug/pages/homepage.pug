@@ -1,0 +1,43 @@
+//- homepage
+include ../mixins/homepagemixin.pug
+include ../mixins/productblock.pug
+
+main.home
+  .home__container.max-src.margin-auto
+    section.home__pr-highlight
+      h4.heading-section-pr Sản phẩm nổi bật
+      .heading-section-pr--hr
+      .home__pr-highlight__pr-block
+        +blockproduct(pr_highlight)
+    section.home__pr-hot-promo
+      section.home__pr-hot
+        h4.heading-section-pr Sản phẩm mua nhiều
+        .nav-tab
+          i.fa.fa-angle-left(aria-hidden="true")
+          i.fa.fa-angle-right(aria-hidden="true")
+        .heading-section-pr--hr
+        .home__pr-hot__pr-block
+          +blockproduct(pr_hot)
+      section.home__pr-promo
+        h4.heading-section-pr Sản phẩm khuyến mại
+        .nav-tab
+          i.fa.fa-angle-left(aria-hidden="true")
+          i.fa.fa-angle-right(aria-hidden="true")
+        .heading-section-pr--hr
+        .home__pr-promo__pr-block
+          +blockproduct(pr_promo)
+    section.home__ads
+      img.home__ads__image(src= ads1_img)
+    section.home__pr-new
+      h4.heading-section-pr Sản phẩm mới
+      .nav-tab
+        i.fa.fa-angle-left(aria-hidden="true")
+        i.fa.fa-angle-right(aria-hidden="true")
+      .heading-section-pr--hr
+      .home__pr-new__pr-block
+        +blockproduct(pr_new)
+    section.home__news
+      h4.heading-section-pr Tin tức
+      .heading-section-pr--hr
+      .home__news__block
+        +news_home(news_home)

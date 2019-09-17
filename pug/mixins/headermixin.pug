@@ -1,0 +1,40 @@
+//- some mixins for header
+mixin socialh(href,iconclass)
+  a.header__top__bar__left__social__link(href= href)
+    i.fa(aria-hidden="true" class= iconclass)
+
+//- navigation - menu 3 levels - use each :( 
+mixin navheader(menulist)
+  each vals in menulist
+    - var count = Object.keys(vals).length;
+    if(count == 1)
+      each val, key in vals
+        li.header__top__bot__nav__menu__item
+          a(href= val).header__top__bot__nav__menu__item__link= key
+    else
+      each val, key in vals
+        if(key != 'child')
+          li.header__top__bot__nav__menu__item
+            a(href= val).header__top__bot__nav__menu__item__link.-has-sub-menu= key
+            each val, key in vals
+              if(key == 'child')
+                ul.header__top__bot__nav__menu.sub-menu
+                  each valsc in val
+                    - var countc = Object.keys(valsc).length;
+                    if(countc == 1)
+                      each valc, keyc in valsc
+                        li.header__top__bot__nav__menu__item
+                          a(href= valc).header__top__bot__nav__menu__item__link= keyc
+                    else
+                      each valc, keyc in valsc
+                        if(keyc != 'child')
+                          li.header__top__bot__nav__menu__item
+                            a(href= valc).header__top__bot__nav__menu__item__link= keyc
+                            each valc, keyc in valsc
+                              if(keyc == 'child')
+                                ul.header__top__bot__nav__menu.sub-menu
+                                  each valsc in valc
+                                    each valc, keyc in valsc
+                                      li.header__top__bot__nav__menu__item
+                                        a(href= valc).header__top__bot__nav__menu__item__link= keyc
+//- LMAO

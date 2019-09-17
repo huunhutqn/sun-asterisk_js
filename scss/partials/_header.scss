@@ -1,0 +1,389 @@
+// style for header
+.header {
+  &__container {
+    @include gridtemplate("headertop" "headerslide",0,1fr);
+  }
+  &__top {
+    grid-area: headertop;
+    &__bar {
+      display: none;
+      background-color: $black-top;
+      color: $grey-slogan;
+    }
+    &__mid {
+      background-color: $white;
+      background-image: url("../../images/pattern-header.png");
+      background-repeat: repeat;
+      &__left {
+        &__slogan {
+          display: flex;
+          justify-content: center;
+          padding: 22px 0;
+          &__img.slogan-black {
+            display: none;
+          }
+        }
+        &__img {
+          display: none;
+        }
+      }
+      &__right {
+        display: none;
+      }
+    }
+    &__bot {
+      background-color: $green-theme;
+      position: relative;
+      z-index: 99;
+      &__container {
+        color: $white;
+        padding: 15px;
+      }
+      &__button {
+        display: flex;
+        justify-content: space-between;
+        &__menu {
+          .fa {
+            font-size: 20px;
+          }
+        }
+        &__utilities {
+          .fa-search {
+            font-size: 14px;
+            margin-right: 20px;
+          }
+          .fa-shopping {
+            font-size: 16px;
+          }
+        }
+      }
+      &__nav {
+        display: none;
+        &__menu {
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: #{map-get($breakpoints, "s")}) {
+    &__top {
+      &__bar {
+        &__container {
+          @include px(15px);
+          font-size: 12px;
+        }
+        display: block;
+        &__left {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &__time {
+            .fa {
+              margin-right: 7px;
+            }
+          }
+          &__social {
+            &__link {
+              .fa {
+                padding: 12px;
+                border-left: 1px solid $black-footer;
+              }
+            }
+            &__link:last-of-type {
+              .fa {
+                padding-right: 0;
+              }
+            }
+          }
+        }
+        &__right {
+          display: none;
+        }
+      }
+      &__mid {
+        &__left {
+          &__slogan {
+            &__img.slogan-green {
+              display: none;
+            }
+            &__img.slogan-black {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: #{map-get($breakpoints, "m")}) {
+    &__top {
+      &__bar {
+        &__container {
+          display: flex;
+          justify-content: space-between;
+        }
+        &__left {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          &__time {
+            margin-right: 30px;
+          }
+          &__social {
+            &__link {
+              .fa {
+                padding: 12px;
+              }
+            }
+            &__link:last-of-type {
+              .fa {
+                padding-right: 12px;
+                border-right: 1px solid $black-footer;
+              }
+            }
+          }
+        }
+        &__right {
+          display: flex;
+          align-items: center;
+          &__login {
+            margin-right: 35px;
+          }
+          .fa {
+            margin-right: 5px;
+          }
+        }
+      }
+      &__mid {
+        &__container {
+          @include gridtemplate("headtopmidleft headtopmidright",0,4fr 5fr);
+          @include px(15px);
+        }
+        &__left {
+          grid-area: headtopmidleft;
+          display: flex;
+          &__slogan {
+            &__img.slogan-green {
+              display: none;
+            }
+            &__img.slogan-black {
+              display: block;
+            }
+          }
+          &__img {
+            display: block;
+          }
+        }
+        &__right {
+          grid-area: headtopmidright;
+          @include gridtemplate("headtopmidrightA" "headtopmidrightB",0,1fr);
+          @include px(10px);
+          &__above {
+            grid-area: headtopmidrightA;
+            align-self: end;
+            font-family: "OpenSans";
+            margin-bottom: 10px;
+            &__link {
+              color: $grey-text;
+              font-size: 14px;
+            }
+            span, .fa {
+              @extend .header__top__mid__right__above__link;
+            }
+            .fa {
+              margin-right: 5px;
+            }
+          }
+          &__below {
+            grid-area: headtopmidrightB;
+            @include gridtemplate("headtopmidrightB1 headtopmidrightB2",0,4fr 1fe);
+            &__search {
+              grid-area: headtopmidrightB1;
+              font-size: 14px;
+              height: 40px;
+              &__input {
+                padding: 12px 0 12px 20px;
+                border-radius: 30px 0 0 30px;
+                &::placeholder {
+                  color: $grey-figure;
+                }
+                @media (min-width: #{map-get($breakpoints, "md")}) {
+                  width: 80%;
+                  padding: 12px 0 12px 22px;
+                }
+              }
+              &__submit-btn {
+                background-color: $white;
+                padding: 12px 20px 12px 15px;
+                position: relative;
+                left: -5px;
+                border-radius: 0 30px 30px 0;
+                &:before {
+                  content: " ";
+                  position: relative;
+                  left: -15px;
+                  border-left: 1px solid $grey-figure;
+                  padding: 5px 0;
+                }
+                .fa {
+                  color: $grey-slogan;
+                }
+                @media (min-width: #{map-get($breakpoints, "md")}) {
+                  padding: 12px 22px 12px 15px;
+                }
+              }
+            }
+            &__cart {
+              grid-area: headtopmidrightB2;
+              top: 12px;
+              position: relative;
+              &__icon {
+                font-size: 20px;
+                top: -3px;
+                position: relative;
+                margin-right: 10px;
+                color: $black-footer;
+              }
+              span {
+                font-size: 15px;
+                color: $grey-copyright;
+              }
+            }
+          }
+        }
+      }
+      &__bot {
+        &__container {
+          display: flex;
+        }
+        &__button {
+          margin-right: 30px;
+          &__utilities {
+            display: none;
+          }
+        }
+        &__nav {
+          display: block;
+          a {
+            text-transform: uppercase;
+            font-size: 14px;
+          }
+          &__menu {
+            &__item {
+              display: inline;
+              position: relative;
+              &__link {
+                padding: 18px 20px 17px;
+                &:hover {
+                  background-color: $green-nav-hover;
+                }
+              }
+              &__link.-has-sub-menu {
+                position: relative;
+                &:after {
+                  font-family: "FontAwesome";
+                  content: "\f0dd";
+                  margin-left: 5px;
+                  position: relative;
+                  top: -4px;
+                }
+              }
+              ul.sub-menu {
+                display: none;
+              }
+              &:first-child &__link {
+                background-color: $green-nav-active;
+              }
+              
+              &:hover {
+                > a {
+                  background-color: $green-nav-hover;
+                }
+                > ul.sub-menu {
+                  display: block;
+                  position: absolute;
+                  left: -4px;
+                  top: 38px;
+                  width: max-content;
+                  background-color: $green-theme;
+                  li {
+                    a {
+                      display: block;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &__menu.sub-menu &__menu__item__link {
+              background-color: $green-theme;
+          }
+          &> &__menu> &__menu__item:not(:first-child)> &__menu__item__link {
+            margin-left: -4px;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: #{map-get($breakpoints, "md")}) {
+    &__top {
+      &__mid {
+        &__container {
+          overflow: hidden;
+        }
+        &__right {
+          position: relative;
+          right: -70px;
+          &__above {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: #{map-get($breakpoints, "l")}) {
+    &__top {
+      &__mid {
+        &__right {
+          position: relative;
+          right: -120px;
+        }
+      }
+    }
+  }
+  &__slide {
+    grid-area: headerslide;
+    &__container {
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+    &__img.slide-notext {
+      max-width: 180%;
+    }
+    &__img.slide-text {
+      display: none;
+    }
+    @media (min-width: #{map-get($breakpoints, "s")}) {
+      &__img.slide-notext {
+        display: none;
+      }
+      &__img.slide-text {
+        display: block;
+        max-width: 180%;
+      }
+    }
+    @media (min-width: #{map-get($breakpoints, "m")}) {
+      &__img.slide-text {
+        max-width: 140%;
+      }
+    }
+    @media (min-width: #{map-get($breakpoints, "l")}) {
+      &__img.slide-text {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+//- cart page
+extends ../includes/layout.pug
+include ../mixins/cartmixin.pug
+block head
+  - var page_name = 'Green Shop - Giỏ hàng';
+  - var hide_slide = 1;
+  +head(page_name)
+block main
+  main.cart
+    .cart__container.max-src.margin-auto
+      - var class_has_cate = 'cart';
+      - var cate_name = 'Giỏ hàng';
+      include ../includes/catepage
+      .cart__title
+        h4.uppercase Giỏ hàng
+      .cart__bought
+        +cart_bought(bought_pr)

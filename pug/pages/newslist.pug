@@ -1,0 +1,24 @@
+//- news list page
+extends ../includes/layout
+include ../mixins/newsmixin
+block head
+  - var page_name = 'Green Shop - Tin tức';
+  - var hide_slide = 1;
+  +head(page_name)
+block main
+  - var class_has_cate = 'news';
+  - var cate_name = 'Tin tức';
+  include ../mixins/productlistmixin
+  mixin news()
+    section.news__main
+      .news__main__container
+        +news_list(news_list)
+    section.news__pagination
+      ul.products__bot__pagination
+        li.products__bot__pagination__item
+          a.products__bot__pagination__item__link(href="#") Trang trước
+        +products_pagination(4)
+        li.products__bot__pagination__item
+          a.products__bot__pagination__item__link(href="#") Trang sau
+  include ../includes/newslayout
+

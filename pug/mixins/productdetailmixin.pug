@@ -1,0 +1,80 @@
+//- mixins for product detail
+include ./productblock
+mixin product_detail(product)
+  each item in product
+    section.product-detail__cate-path.cate-path
+        a.product-detail__cate-path__link(href="index.html") Home
+          |  / 
+          a.product-detail__cate-path__link.--cate-active(href= item.url)= item.title
+    section.product-detail__info
+      .product-detail__info__image
+        .product-detail__info__image__featured
+          img(src="../images/sp/" + item.img)
+        .product-detail__info__image__gallery
+          each val in item.gallery
+            img(src="../images/sp/" + val)
+      .product-detail__info__features
+        .product-detail__info__features__item
+          a.product-detail__info__features__item__title(href= item.url)= item.title
+          .product-detail__info__features__item__rating
+            - var i = 0;
+            - for(i = 1; i <= item.rating; i++)
+              - if(i%2 == 0)
+                i.fa.fa-star(aria-hidden="true")
+            - i--
+            - if(i%2 != 0)
+                i.fa.fa-star-half-o(aria-hidden="true")
+                - i++
+            - for(i = i; i < 10; i++)
+              - if(i%2 == 0)
+                i.fa.fa-star-o(aria-hidden="true")
+        .product-detail__info__features__item__price
+          span.--price-new= item.price + ".000 đ"
+          span.--price-old= item.old_price + ".000 đ"
+        p.product-detail__info__features__item__long-desc= item.long_desc
+        .product-detail__info__features__item__num
+          span Số lượng
+          input(type="button" value="-").--btn-sub
+          input(type="text" value="1").--input-num
+          input(type="button" value="+").--btn-add
+        .product-detail__info__features__item__buy.block__item__info-bot__buy
+          button.--buy-now.btn-buy-now.uppercase
+            | Mua ngay
+          a(href= item.buy_url).--more-info.btn-more-pr-info
+            i.fa.fa-search(aria-hidden="true")
+          a(href="#").--love-product.btn-love-pr
+            i.fa.fa-heart(aria-hidden="true")
+        .product-detail__info__features__item__social
+          .--btn-fb
+            a(href="#")
+              img(src="images/fb.png")
+            label 0
+          .--btn-tw
+            a(href="#")
+              img(src="images/tw.png")
+          .--btn-ggp
+            a(href="#")
+              img(src="images/ggp.png")
+            label 0
+          .--btn-share
+            a(href="#")
+              img(src="images/share.png")
+    section.product-detail__desc
+      .product-detail__desc__tab.uppercase
+        a.product-detail__desc__tab__info.--tab-active(href="#")
+          | Thông tin sản phẩm
+        a.product-detail__desc__tab__review(href="#")
+          | Khác hàng dánh giá
+        a.product-detail__desc__tab__tag(href="#")
+          | Thẻ tag
+      .product-detail__desc__text
+        p= item.full_desc
+    section.product-detail__similar
+      h4.heading-section-pr Sản phẩm cùng loại
+      .nav-tab
+        i.fa.fa-angle-left(aria-hidden="true")
+        i.fa.fa-angle-right(aria-hidden="true")
+      .heading-section-pr--hr
+      .product-detail__similar__block
+        +blockproduct(pr_similar)
+

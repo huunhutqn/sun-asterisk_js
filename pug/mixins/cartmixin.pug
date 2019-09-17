@@ -1,0 +1,44 @@
+//- mixins for cart page
+mixin cart_bought(list)
+  form(action="#").cart__bought__form
+    table.cart__bought__form__table
+      tbody
+        tr.cart__bought__form__table__header.uppercase
+          th Hình ảnh
+          th Tên sản phẩm
+          th Đơn giá
+          th Số lượng
+          th Thành tiền
+          th Xóa
+        each val in list
+          tr.cart__bought__form__table__item
+            td.cart__bought__form__table__item__image
+              a(href= val.url)
+                img(src= val.img)
+            td.uppercase.cart__bought__form__table__item__name
+              a(href= val.url)= val.name
+            td.cart__bought__form__table__item__price
+              span= val.price + '.000 đ'
+            td.cart__bought__form__table__item__amount
+              input(type="number" value="1" step="1")
+            td.cart__bought__form__table__item__total
+              span= val.total + '.000 đ'
+            td.cart__bought__form__table__item
+              a(href="#").cart__bought__form__table__item__trash-icon
+                i.fa.fa-trash(aria-hidden="true")
+    .cart__bought__form__action
+      button.cart__bought__form__action__cancel.uppercase Hủy đơn hàng
+      button.cart__bought__form__action__continue.uppercase Tiếp tục mua
+    .cart__bought__form__total.uppercase
+      table
+        tr.cart__bought__form__total__none-vat
+          td Tổng tiền (Chưa thuế)
+          td 270.000 đ
+        tr.cart__bought__form__total__vat
+          td Thuế (VAT: 10%)
+          td 27.000 đ
+        tr.cart__bought__form__total__final
+          td Tổng phải thanh toán
+          td 297.000 đ
+    .cart__bought__form__pay-btn.uppercase
+      button.cart__bought__form__pay-btn__order.uppercase Thanh toán

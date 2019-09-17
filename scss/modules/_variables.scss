@@ -1,0 +1,66 @@
+// some variables and declaration are in here
+
+// font
+$icon-font: "FontAwesome";
+@font-face {
+  font-family: $icon-font;
+	src: url(../webfonts/fontawesome-webfont.ttf);
+}
+$kv-arial: "KV Arial";
+@font-face {
+  font-family: $kv-arial;
+	src: url(../webfonts/KV-Arial.ttf);
+}
+$arial-uni: "Arial UMS";
+@font-face {
+  font-family: $arial-uni;
+	src: url(../webfonts/ARIALUNI.TTF);
+}
+$open-sans: "OpenSans";
+@font-face {
+  font-family: $open-sans;
+	src: url(../webfonts/OpenSans-Regular.ttf);
+}
+$roboto: "Roboto";
+@font-face {
+  font-family: $roboto;
+	src: url(../webfonts/Roboto-Regular.ttf);
+}
+$roboto-slab: "RobotoSlab";
+@font-face {
+  font-family: $roboto-slab;
+	src: url(../webfonts/RobotoSlab-Regular.ttf);
+}
+$gulyesa: "UVF Gulyesa";
+@font-face {
+  font-family: $gulyesa;
+	src: url(../webfonts/UVF-GulyesaScript.otf);
+}
+$museo: "VNF Museo";
+@font-face {
+  font-family: $museo;
+	src: url(../webfonts/VNF-Museo.ttf);
+}
+$sheila: "VNF Sheila";
+@font-face {
+  font-family: $sheila;
+	src: url(../webfonts/VNF-Sheila.ttf);
+}
+
+// breakpoint
+$breakpoints:
+  ("xs": 480px,
+  "s": 624px,
+  "sm": 768px,
+  "m": 896px,
+  "md": 1024px,
+  "l": 1171px,
+  //"l": 1195px,
+  "lg": 1366px
+);
+
+// display
+$maxScr: 1171px;
+
+// i don't know
+$headPattern: "../../images/pattern-header.png"

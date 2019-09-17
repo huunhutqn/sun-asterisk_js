@@ -1,0 +1,39 @@
+//- mixin use in homepage
+
+//- news block
+mixin news_home(newslist)
+  - var count = Object.keys(newslist).length + 1;
+  - var counts = count - 1;
+  each vals in newslist
+    article.block__item-news(class="item-no" + (count - counts--))
+      a.block__item-news__thumb(href= vals.url)
+        img(src= vals.thumb)
+      .block__item-news__date.italic
+        span #{vals.date}
+      a.block__item-news__title(href= vals.url)
+        h5 #{vals.title}
+      .block__item-news__desc
+        p #{vals.desc}
+      .block__item-news__read-more.italic
+        a(href= vals.url) Đọc tiếp
+
+//- popup
+mixin popup()
+  article.popup
+    input(type="radio" unchecked).popup__btn-close
+    .popup__container.margin-auto
+      .popup__image
+        img(src= popup)
+      .popup__text
+        h3.popup__text--title
+        h3.popup__text--alert
+        .popup__text__email__form
+          .popup__text__email__form__input
+            input(type="email" placeholder="Nhập email của bạn vào đây") 
+          .popup__text__email__form__button
+            button(type="submit")
+              i.fa.fa-paper-plane(aria-hidden="true")
+        p.popup__text--content Đăng ký email ngay hôm nay để nhận các thông tin về sự kiện và các trương chình giảm giá từ chúng tôi
+        .popup__text--checkbox
+          input(type="checkbox", name="")
+          span Không hiển thị lại thông báo này nữa

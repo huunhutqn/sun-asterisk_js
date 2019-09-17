@@ -1,0 +1,413 @@
+// style for footer
+.footer {
+  position: relative;
+  background-color: $black-footer;
+  color: $grey-text;
+  &__container {
+    @include gridtemplate("sub" "info" "nav" "copy",0,1fr);
+    font-size: 12px;
+    .footer__subcribe {
+      grid-area: sub;
+      margin-top: 15px;
+      @include px(15px);
+      @include py(15px);
+      &__container {
+        @include gridtemplate("social" "email",0,1fr);
+        .footer__subcribe__social {
+          grid-area: social;
+          margin-bottom: 35px;
+          &__label {
+            @include navfooter-label;
+          }
+          &__icon {
+            &__link {
+              color: $white;
+              i {
+                font-size: 22px;
+                @include lineH(20px);
+              }
+            }
+            &__link:not(:last-of-type) {
+              margin-right: 30px;
+            }
+          }
+        }
+        @media (min-width: #{map-get($breakpoints, "s")}) {
+          @include gridtemplate("social email",0,1fr 1fr);
+        }
+        .footer__subcribe__email {
+          grid-area: email;
+          margin-bottom: 35px;
+          &__label {
+            @include navfooter-label;
+          }
+          &__form {
+            display: flex;
+            &__input {
+              @include lineH(46px);
+              width: 100%;
+              input {
+                @include px(17px);
+                @include py(0);
+                width: 100%;
+              }
+            }
+            &__button {
+              button {
+                padding: 0;
+                background-color: $green-theme;
+                .fa{
+                  padding: 15px 17px;
+                  color: $white;
+                  @include lineH(16px);
+                }
+              }
+            }
+          }
+        }
+      }
+      @media (min-width: #{map-get($breakpoints, "m")}) {
+        @include py(0);
+        margin-top: 30px;       
+        margin-bottom: 60px;
+        &__container {
+          @include gridtemplate("social email email",0,1fr 1fr 1fr);
+          .footer__subcribe__social {
+            margin-bottom: 0;
+            &__label {
+              color: $grey-slogan;
+              margin-bottom: 0;
+            }
+            &__icon {
+              &__link {
+                .fa {
+                  font-size: 16px;
+                  @include lineH(20px);
+                  color: $grey-slogan;
+                }
+              }
+              &__link:not(:last-of-type) {
+                margin-right: 25px;
+              }
+            }
+          }
+          .footer__subcribe__email {
+            @include gridtemplate("emailLabel emailInput emailInput",0,1fr 1fr 1fr);
+            margin-bottom: 0;
+            &__label {
+              grid-area: emailLabel;
+              margin-bottom: 0;
+              padding-right: 15px;
+              color: $grey-slogan;
+              padding-right: 15%;
+            }
+            &__form {
+              grid-area: emailInput;
+            }
+          }
+          @media (min-width: #{map-get($breakpoints, "l")}) {
+            @include gridtemplate("social email email",0,4fr 7fr);
+            .footer__subcribe__email {
+              @include gridtemplate("emailLabel emailInput",0,2.5fr 5.5fr);
+            }  
+          }
+        }
+      }
+    }
+    .footer__info {
+      grid-area: info;
+      @include px(15px);
+      @include py(15px);
+      &__container {
+        @include gridtemplate("desc" "client" "service" "policy" "news",0,1fr);
+        .footer__info__desc {
+          grid-area: desc;
+          margin-bottom: 45px;
+          &__container {
+            margin-bottom: 15px;
+            .footer__info__desc__logo {
+              margin-bottom: 15px;
+            }
+            .footer__info__desc__intro {
+              .footer__info__desc__intro__text {
+                @include lineH(23px);
+              }
+            }
+            .footer__info__desc__contact {
+              display: none;
+              &__phone {
+                @include lineH(30px);
+              }
+              &__email {
+                @include lineH(30px);
+              }
+            }
+          }
+        }
+        .footer__info__client {
+          grid-area: client;
+          margin-bottom: 45px;
+          &__label {
+            @include navfooter-label;
+          }
+          &__container {
+            margin-bottom: 15px;
+            .footer__info__client__nav {
+              &__menu {
+                &__item {
+                  @include navfooter;
+                }
+              }
+            }
+          }
+        }
+        .footer__info__service {
+          grid-area: service;
+          margin-bottom: 45px;
+          &__label {
+            @include navfooter-label;
+          }
+          &__container {
+            margin-bottom: 15px;
+            .footer__info__service__nav {
+              &__menu {
+                &__item {
+                  @include navfooter;
+                }
+              }
+            }
+          }
+        }
+        .footer__info__policy {
+          grid-area: policy;
+          margin-bottom: 45px;
+          &__label {
+            @include navfooter-label;
+          }
+          &__container {
+            margin-bottom: 15px;
+            .footer__info__policy__nav {
+              &__menu {
+                &__item {
+                  @include navfooter;
+                }
+              }
+            }
+          }
+        }
+        .footer__info__news {
+          grid-area: news;
+          &__label {
+            @include navfooter-label;
+          }
+          &__container {
+            margin-bottom: 15px;
+            .footer__info__news__nav {
+              &__menu {
+                &__item {
+                  @include navfooter;
+                }
+              }
+            }
+          }
+        }
+        @media (min-width: #{map-get($breakpoints, "s")}) {
+          @include gridtemplate("desc desc" "client service" "policy news",0,1fr 1fr);
+          .footer__info__desc {
+            &__container {
+              .footer__info__desc__contact {
+                display: block;
+                &__phone {
+                  @include lineH(30px);
+                  .fa {
+                    font-size: 18px;
+                    color: $green-theme;
+                    margin-right: 10px;
+                  }
+                }
+                &__email {
+                  @include lineH(30px);
+                  .fa {
+                    font-size: 10px;
+                    color: $green-theme;
+                    margin-right: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        @media (min-width: #{map-get($breakpoints, "m")}) {
+          @include gridtemplate("desc desc desc desc" "client service policy news",0,1fr 1fr 1fr 1fr);
+          .footer__info__desc {
+            margin-bottom: 30px;
+            &__container {
+              margin-bottom: 0;
+            }
+          }
+          .footer__info__client {
+            margin-bottom: 0;
+            &__container {
+              padding-right: 15px;
+              margin-bottom: 0;
+            }
+          }
+          .footer__info__service {
+            margin-bottom: 0;
+            &__container {
+              padding-right: 15px;
+              margin-bottom: 0;
+            }
+          }
+          .footer__info__policy {
+            margin-bottom: 0;
+            &__container {
+              padding-right: 15px;
+              margin-bottom: 0;
+            }
+          }
+          .footer__info__news {
+            &__container {
+              margin-bottom: 0;
+            }
+          }
+        }
+        @media (min-width: #{map-get($breakpoints, "l")}) {
+          @include gridtemplate("desc client service policy news",0,4.5fr 2.5fr 2fr 2fr 1.5fr);
+          .footer__info__desc {
+            margin-right: 80px;
+          }
+          .footer__info__client {
+            margin-top: 25px;
+          }
+          .footer__info__service {
+            margin-top: 25px;
+          }
+          .footer__info__policy {
+            margin-top: 25px;
+          }
+          .footer__info__news {
+            margin-top: 25px;
+          }
+        }
+      }
+      @media (min-width: #{map-get($breakpoints, "m")}) {
+        @include py(0);
+        margin-bottom: 50px;
+        border-top: none!important;
+      }
+    }
+    .footer__nav {
+      grid-area: nav;
+      display: none;
+      @include px(15px);
+      @include py(15px);
+      &__container {
+        @include gridtemplate("hotlink" "payment",0,1fr);
+        .footer__nav__hotlink {
+          grid-area: hotlink;
+        }
+        .footer__nav__payment {
+          grid-area: payment;
+        }
+      }
+      @media (min-width: #{map-get($breakpoints, "s")}) {
+        display: block;
+        &__container {
+          @include gridtemplate("hotlink" "payment",0,1fr);
+          .footer__nav__hotlink {
+            &__nav {
+              &__menu {
+                display: flex;
+                &__item {
+                  &__link {
+                    @include lineH(20px);
+                  }
+                }
+                &__item:not(:last-of-type) {
+                  margin-right: 15px;
+                }
+              }
+            }
+          }
+          .footer__nav__payment {
+            &__nav {
+              &__menu {
+                display: flex;
+                &__item {
+                  &__link {
+                    @include lineH(18px);
+                    .fa {
+                      font-size: 19px;
+                    }
+                  }
+                }
+                &__item:not(:last-of-type) {
+                  margin-right: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+      @media (min-width: #{map-get($breakpoints, "m")}) {
+        @include py(25px);
+        &__container {
+          @include gridtemplate("hotlink payment",0,3fr 1fr);
+          .footer__nav__hotlink {
+            &__nav {
+              &__menu {
+                display: flex;
+                margin-bottom: 0;
+                &__item {
+                  &__link {
+                    @include lineH(20px);
+                  }
+                }
+                &__item:not(:last-of-type) {
+                  margin-right: 15px;
+                }
+              }
+            }
+          }
+          .footer__nav__payment {
+            &__nav {
+              &__menu {
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 0;
+                &__item {
+                  &__link {
+                    @include lineH(18px);
+                    .fa {
+                      font-size: 19px;
+                    }
+                  }
+                }
+                &__item:not(:last-of-type) {
+                  margin-right: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer__info, .footer__nav {
+      border-top: 1px solid $grey-hr;
+    }
+    .footer__copyright {
+      grid-area: copy;
+      @include px(15px);
+      @include py(15px);
+      background-color: $grey-copyright; 
+      &__container {
+        .footer__copyright__text {
+          color: $white;
+          font-size: 14px;
+          @include lineH(20px);
+        }
+      }
+    }
+  }
+}

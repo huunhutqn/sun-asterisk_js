@@ -1,0 +1,54 @@
+//- product layout detail for list/grid
+mixin product-layout()
+  main.products
+    .products__container.max-src.margin-auto
+      section.products__cate-path.cate-path
+        a.products__cate-path__link(href="index.html") Home
+        |  / 
+        a.products__cate-path__link.--cate-active(href="#") Danh sách sản phẩm
+      aside.products__cate-list
+        section.products__cate-list__product
+          h4.heading-section-pr Danh mục sản phẩm
+          .heading-section-pr--hr
+          .products__cate-list__product__block
+            +aside_cate(cate_name_list)
+        section.products__cate-list__price
+          h4.heading-section-pr Tìm theo giá
+          .heading-section-pr--hr
+          .products__cate-list__price__block
+            +aside_price(cate_price)
+        section.products__cate-list__color
+          h4.heading-section-pr Tìm theo màu
+          .heading-section-pr--hr
+          .products__cate-list__color__block
+            +aside_color(cate_color)
+      section.products__top
+        .products__top__ads
+          img.products__top__ads__image(src= ads2_img)
+        .products__top__arrange
+          .products__top__arrange__table
+            a.products__top__arrange__table__link(href="product-grid.html")
+              i.fa.fa-th(aria-hidden="true")
+            a.products__top__arrange__table__link(href="product-list.html")
+              i.fa.fa-th-list(aria-hidden="true")
+          .products__top__arrange__sort
+            span Sắp xếp theo tên
+            select(name="arrange-sort")
+              option(value="pr-name" selected) Tên sản phẩm
+              option(value="pr-price") Giá sản phẩm
+              option(value="pr-promo") Sản phẩm khuyến mại
+          .products__top__arrange__num-show
+            span Show
+            select(name="num-show")
+              option(value="15" selected) 15
+              option(value="25") 25
+              option(value="50") 50
+      +productmain()
+      section.products__bot
+        ul.products__bot__pagination
+          li.products__bot__pagination__item
+            a.products__bot__pagination__item__link(href="#") Trang trước
+          +products_pagination(4)
+          li.products__bot__pagination__item
+            a.products__bot__pagination__item__link(href="#") Trang trước
+include ./products

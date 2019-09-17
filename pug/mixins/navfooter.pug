@@ -1,0 +1,20 @@
+//- navigation / menu footer
+mixin navfooter(ulC, liC, iC, aC, menu)
+  - var iCl = iC;
+  ul(class= ulC)
+    each vals in menu
+      each val, key in vals
+        li(class= liC)
+          if(iCl == "hidden")
+            a(class= aC, href= val)= key
+          else
+            i(class="fa fa-chevron-right " + iC aria-hidden="true")
+            a(class= aC, href= val)= key
+mixin paymentfooter(ulC, liC, aC, iC, menu)
+  ul(class= ulC)
+    each vals in menu
+      each val, key in vals
+        li(class= liC)
+            a(class= aC, href= val)
+              i(class="fa " + key + " " + iC aria-hidden="true")
+

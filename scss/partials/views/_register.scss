@@ -1,0 +1,64 @@
+// styles for register page
+// mobile first
+.register {
+  &__container {
+    @include px(15px);
+    padding-top: 20px;
+    min-height: 60rem;
+    padding-bottom: 50px;
+  }
+  &__cate-path {
+    margin-bottom: 60px;
+  }
+  &__form {
+    &__title {
+      margin-bottom: 20px;
+      h4 {
+        font-size: 18px;
+        font-weight: bold;
+        color: $green-label;
+      }
+    }
+    &__info {
+      @include gridtemplates(0,0,1fr,25px,50px);
+      margin-bottom: 50px;
+      &__field {
+        @extend %input-has-label;
+        &:last-child {
+          margin-top: 10px;
+        }
+      }
+    }
+    &__account {
+      @include gridtemplates(0,0,1fr,25px,50px);
+      margin-bottom: 40px;
+      &__field {
+        @extend %input-has-label;
+      }
+    }
+    &__action {
+      button {
+        @extend %btn-style;
+        font-size: 13px;
+        @include px(40px);
+      }
+      &__back {
+        @extend .cart__bought__form__action__cancel;
+        margin-right: 0;
+      }
+      &__submit {
+        @extend .cart__bought__form__action__continue;
+      }
+    }
+    @media (min-width: #{map-get($breakpoints, "sm")}) {
+      &__info, &__account {
+        @include gridtemplates(0,0,1fr 1fr,25px,50px);
+      }
+      &__action {
+        &__back {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}

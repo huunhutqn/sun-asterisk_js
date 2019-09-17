@@ -1,0 +1,12 @@
+//- product layout for list/grid
+include ../mixins/productlistmixin.pug
+html
+  include ./head
+  +head('Green Shop - Danh sách sản phẩm')
+  body
+    .container
+      - var hide_slide = 1;
+      include ./header
+      +product-layout()
+      include ./footer
+

@@ -1,0 +1,18 @@
+//- news detail page
+extends ../includes/layout
+include ../mixins/newsmixin
+block head
+  - var page_name = 'Green Shop - Tin tức';
+  - var hide_slide = 1;
+  +head(page_name)
+block main
+  - var class_has_cate = 'news';
+  - var cate_name = 'Tin tức';
+  include ../mixins/productlistmixin
+  mixin news()
+    section.news__main
+      .news__main__container
+        +news_detail(news_detail)
+        +news_comment()
+  include ../includes/newslayout
+

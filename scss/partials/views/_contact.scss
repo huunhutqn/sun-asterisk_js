@@ -1,0 +1,78 @@
+// styles for contact page
+.contact {
+  &__container {
+    // @extend .register__container;
+    min-height: 50rem;
+    padding-top: 20px;
+    min-height: 60rem;
+    padding-bottom: 50px;
+  }
+  .max-src {
+    @include px(15px);
+  }
+  &__cate-path {
+    @extend .register__cate-path;
+    margin-bottom: 70px;
+  }
+  &__map {
+    clear: both;
+    margin-bottom: 60px;
+    img {
+      width: 100%;
+    }
+  }
+  &__form {
+    &__title {
+      @extend .register__form__title;
+    }
+    &__info {
+      margin-bottom: 50px;
+      &__field {
+        @extend .register__form__info__field;
+        margin-bottom: 35px;
+      }
+      &__action {
+        button {
+          @extend %btn-style;
+          @extend .register__form__action;
+          font-size: 13px;
+          background-color: $green-theme;
+          color: $white;
+        }
+      }
+    }
+    &__desc {
+      font-size: 12px;
+      color: $grey-slogan;
+      &__logo {
+        margin-bottom: 30px;
+      }
+      &__intro {
+        margin-bottom: 40px;
+      }
+      &__contact {
+        .fa {
+          color: $green-theme;
+          margin-right: 8px;
+        }
+        a {
+          color: $grey-slogan;
+        }
+        &__phone {
+          margin-bottom: 15px;
+          .fa {
+            font-size: 18px;
+          }
+        }
+        &__email {
+          .fa {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+    @media (min-width: #{map-get($breakpoints, "md")}) {
+      @include gridtemplates(0,0,1fr 1fr,0,70px);
+    }
+  }
+}

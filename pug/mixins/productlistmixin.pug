@@ -1,0 +1,32 @@
+//- mixins for product layout
+include ./productblock
+
+mixin products_pagination(num)
+  - for(var i = 1; i <= num; i++)
+      li.products__bot__pagination__item
+        a.products__bot__pagination__item__link(href="#") #{i}
+mixin aside_cate(list)
+  ul.products__cate-list__product__nav
+    each vals in list
+      each val, key in vals
+          li.products__cate-list__product__nav__item
+            a.products__cate-list__product__nav__item__link(href="#")
+              i.fa.fa-chevron-right(aria-hidden="true")
+              span= key 
+                if val 
+                  | ( #{val} )
+mixin aside_price(list)
+  ul.products__cate-list__product__nav
+    each val in list
+        li.products__cate-list__product__nav__item
+          a.products__cate-list__product__nav__item__link(href="#")
+            i.fa.fa-chevron-right(aria-hidden="true")
+            span= val
+mixin aside_color(list)
+  ul.products__cate-list__product__nav
+    each vals in list
+      each val, key in vals
+          li.products__cate-list__product__nav__item
+            a.products__cate-list__product__nav__item__link(href="#")
+              i.fa.fa-circle(aria-hidden="true" style="color: "+val)
+              | #{key}

@@ -1,0 +1,33 @@
+//- login page
+extends ../includes/layout
+include ../mixins/inputmixin
+
+block head
+  - var page_name = 'Green Shop - Đăng nhập';
+  - var hide_slide = 1;
+  +head(page_name)
+block main
+  main.login
+    .login__container.max-src.margin-auto
+      - var class_has_cate = 'login';
+      - var cate_name = 'Đăng nhập';
+      include ../includes/catepage
+      .login__form
+        .login__form__container
+          .login__form__title
+            h4.uppercase Thông tin cá nhân
+          .login__form__info
+            +inputmixin('login__form__info','Email của bạn','email')
+            +inputmixin('login__form__info','Mật khẩu','password')
+            +inputmixin('login__form__info','Ghi nhớ tài khoản','checkbox')
+            a(href="#").italic.--forgot-pass Bạn quên mật khẩu ?
+            .login__form__info__action
+              button.login__form__info__action__submit.uppercase Đăng nhập
+        .login__form__container
+          .login__form__title
+            h4.uppercase Bạn chưa có tài khoản?
+          .login__form__warning
+            p Đăng ký tài khoản ngay để có thể mua hàng nhanh chóng và dễ dàng hơn
+              |  ! Ngoài ra còn có rất nhiều chính sách và ưu đãi cho các thành viên citybike
+            button.register__form__warning__submit.uppercase Đăng ký
+

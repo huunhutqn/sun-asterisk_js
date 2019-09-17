@@ -1,0 +1,21 @@
+# # Ignore folder
+# /images/*
+# /webfonts/*
+/scss/.sass-cache/*
+
+# # Ignore files
+# /index.html
+# /product-grid.html
+# /product-list.html
+# /product-detail.html
+# /register.html
+# /login.html
+# /contact.html
+# /cart.html
+# /newslist.html
+# /newsdetail.html
+# /.gitignore
+# /styles/font-awesome.css
+/styles/style.css.map
+# /styles/style.css
+# /styles/reboot.css

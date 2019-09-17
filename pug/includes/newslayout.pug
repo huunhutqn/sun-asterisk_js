@@ -1,0 +1,20 @@
+//- template page news
+main.news
+  .news__container.max-src.margin-auto
+    include ./catepage
+    section.news__cate-list--product.products__cate-list__product
+      h4.heading-section-pr Danh mục sản phẩm
+      .heading-section-pr--hr
+      .news__cate-list--product__block.products__cate-list__product__block
+        +aside_cate(cate_name_list)
+    section.news__cate-list--highlight.products__cate-list__product
+      h4.heading-section-pr Tin tức nổi bật
+      .heading-section-pr--hr
+      .news__cate-list--highlight__block.products__cate-list__product__block
+        +news_highlight(news_highlight)
+    section.news__cate-list--tag.products__cate-list__product
+      h4.heading-section-pr Blog tag
+      .heading-section-pr--hr
+      .news__cate-list--tag__block.products__cate-list__product__block
+        +news_tag(news_tag)
+    +news()

@@ -1,0 +1,12 @@
+//- product detail page
+include ../mixins/productdetailmixin
+
+html
+  include ../includes/head
+  +head('Green Shop - Cây dạ lam')
+  body
+    .container
+      - var hide_slide = 1;
+      include ../includes/header
+      include ../includes/product-detail
+      include ../includes/footer

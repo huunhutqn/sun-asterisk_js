@@ -1,0 +1,76 @@
+//- mixins for news page
+mixin news_highlight(list)
+  each val in list
+    .news__cate-list--highlight__item
+      a(href= val.url).news__cate-list--highlight__item__thumb
+        img(src= val.img)
+      a(href= val.url).news__cate-list--highlight__item__title= val.title
+mixin news_tag(list)
+  each val in list
+    .news__cate-list--tag__item
+      a(href= val.url).news__cate-list--tag__item__link= val.name
+mixin news_list(list)
+  .news__main__list
+    each val in list
+      .news__main__list__item
+        h4.news__main__list__item__title
+          a(href= val.url)= val.title
+        .news__main__list__item__info
+          span.news__main__list__item__info--date= val.date
+          span.news__main__list__item__info--time= val.time
+          span.news__main__list__item__info--comment= val.comment + " Bình luận"
+        .news__main__list__item__image
+          img(src= val.img)
+        .news__main__list__item__desc
+          a(href= val.url)= val.short_desc
+mixin comment_detail(item)
+  .news__main__comment__item
+    each val in item
+      .news__main__comment__item__parent
+        .news__main__comment__item__avatar
+          img(src= val.img)
+        .news__main__comment__item__detail
+          h5.news__main__comment__item__detail__name= val.name
+          p.news__main__comment__item__detail__content= val.content
+          p.news__main__comment__item__detail__date.italic= val.date
+      if val.reply
+        each vals in val.reply
+          .news__main__comment__item__child
+            .news__main__comment__item__avatar
+              img(src= vals.img)
+            .news__main__comment__item__detail
+              h5.news__main__comment__item__detail__name= vals.name
+              p.news__main__comment__item__detail__content= vals.content
+              p.news__main__comment__item__detail__date.italic= vals.date
+mixin news_comment()
+  .news__main__comment
+    h4.news__main__comment__title.uppercase Bình luận (3)
+    +comment_detail(news_comment1)
+    +comment_detail(news_comment3)
+  .news__main__form
+    h4.news__main__form__title.uppercase Viết bình luận :
+    .news__main__form__info
+      .news__main__form__info__item
+        input(type="text" placeholder="Họ và tên:")
+      .news__main__form__info__item
+        input(type="email" placeholder="Email:")
+      .news__main__form__info__item
+        input(type="text" placeholder="Phone:")
+    .news__main__form__text
+      textarea(rows="5" placeholder="Bình luận")
+    .news__main__form__send
+      button.news__main__form__send__btn Gửi
+mixin news_detail(list)
+  .news__main__detail
+    each val in list
+      .news__main__list__item
+        h4.news__main__list__item__title
+          a(href= val.url)= val.title
+        .news__main__list__item__info
+          span.news__main__list__item__info--date= val.date
+          span.news__main__list__item__info--time= val.time
+          span.news__main__list__item__info--comment= val.comment + " Bình luận"
+        .news__main__list__item__image
+          img(src= val.img)
+        .news__main__list__item__desc
+          a(href= val.url)= val.full_desc

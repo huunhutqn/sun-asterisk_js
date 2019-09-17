@@ -1,0 +1,59 @@
+// styles for login page
+// mobile first
+.login {
+  &__container {
+    @extend .register__container;
+    min-height: 50rem;
+  }
+  &__cate-path {
+    @extend .register__cate-path;
+  }
+  &__form {
+    &__title {
+      @extend .register__form__title;
+    }
+    &__info {
+      @include gridtemplates(0,0,1fr,25px,0);
+      margin-bottom: 50px;
+      &__field {
+        @extend .register__form__info__field;
+        &:nth-child(3) {
+          display: inline;
+        }
+      }
+      .--forgot-pass {
+        font-size: 12px;
+        text-decoration: underline;
+      }
+    }
+    &__warning {
+      p {
+        font-size: 12px;
+        font-family: "Roboto";
+        margin-bottom: 30px;
+        color: $grey-text;
+      }
+    }
+  }
+  button {
+    @extend %btn-style;
+    @extend .register__form__action;
+    font-size: 13px;
+    background-color: $green-theme;
+    color: $white;
+  }
+  @media (min-width: #{map-get($breakpoints, "sm")}) {
+    &__form {
+      @include gridtemplates(0,0,1fr 1fr,0,50px);
+      &__info {
+        display: block;
+        &__field {
+          margin-bottom: 25px;
+        }
+        &__action {
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}
