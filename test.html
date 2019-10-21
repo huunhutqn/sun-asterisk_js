@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body onload="loadDoc()">
+
+<h2>The XMLHttpRequest Object</h2>
+
+<!-- <button type="button" onclick="loadDoc()">Request data</button> -->
+
+<p id="demo"></p>
+
+<script>
+  var a;
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      a = this.responseText;
+      console.log(a);
+      //document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "http://localhost:3000/products", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>

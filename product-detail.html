@@ -40,7 +40,7 @@
                         <input class="header__top__mid__right__below__search__input" placeholder="Tìm kiếm"/>
                         <button class="header__top__mid__right__below__search__submit-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                       </div>
-                      <div class="header__top__mid__right__below__cart"><i class="fa fa-shopping-basket header__top__mid__right__below__cart__icon"></i><span class="header__top__mid__right__below__cart__total">0 Sản phẩm</span></div>
+                      <div class="header__top__mid__right__below__cart"><i class="fa fa-shopping-basket header__top__mid__right__below__cart__icon"></i><a href="cart.html" class="header__top__mid__right__below__cart__total"><span id="header__top__mid__right__below__cart__total">0</span> Sản phẩm</a></div>
                     </div>
                   </div>
                 </div>
@@ -87,29 +87,33 @@
         </div>
       </header>
       <main class="product-detail">
-        <div class="product-detail__container max-src margin-auto">
-          <section class="product-detail__cate-path cate-path"><a class="product-detail__cate-path__link" href="index.html">
-              Home / <a class="product-detail__cate-path__link --cate-active" href="#">Cây dạ lam</a></a></section>
+        <div id="product-detail" class="product-detail__container max-src margin-auto">
+          <!-- product detail is here -->
+          <section id="cate-path" class="product-detail__cate-path cate-path">
+            <!-- cate-path is here -->
+          </section>
           <section class="product-detail__info">
             <div class="product-detail__info__image">
-              <div class="product-detail__info__image__featured"><img src="../images/sp/spx2-8.png"/></div>
-              <div class="product-detail__info__image__gallery"><img src="../images/sp/spx2-9.png"/><img src="../images/sp/spx2-8.png"/><img src="../images/sp/spx2-1.png"/><img src="../images/sp/spx2-11.png"/><img src="../images/sp/spx2-5.png"/>
-              </div>
+              <div id="product-detail__img" class="product-detail__info__image__featured"></div>
+              <div id="product-detail__gallery" class="product-detail__info__image__gallery"></div>
             </div>
             <div class="product-detail__info__features">
-              <div class="product-detail__info__features__item"><a class="product-detail__info__features__item__title" href="#">Cây dạ lam</a>
-                <div class="product-detail__info__features__item__rating"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
-                </div>
+              <div class="product-detail__info__features__item">
+                <a id="product-detail__name" class="product-detail__info__features__item__title" href=""></a>
+                <div id="product-detail__rating" class="product-detail__info__features__item__rating"></div>
               </div>
-              <div class="product-detail__info__features__item__price"><span class="--price-new">4.099.000 đ</span><span class="--price-old">4.099.000 đ</span></div>
-              <p class="product-detail__info__features__item__long-desc">Cây mọc thành bụi thưa, thân vươn thẳng với chiều cao cây trung bình từ 0,8-1,2m. Lá hình trứng, mép lá nguyên, gân lá nổi rõ, phiến rộng khoảng từ 15-20cm. Lá có màu xanh đậm ở mặt trên, quanh gân lá có màu trắng sữa; mặt dưới lá nhạt màu hơn. Lá cây dạ lam mọc cách, cuống lá dài khi rụng để lại các khía màu nâu nhạt.</p>
+              <div class="product-detail__info__features__item__price">
+                <span id="product-detail__promo-price" class="--price-new"></span>
+                <span id="product-detail__price" class="--price-old"></span>
+              </div>
+              <p id="product-detail__long-desc" class="product-detail__info__features__item__long-desc"></p>
               <div class="product-detail__info__features__item__num"><span>Số lượng</span>
                 <input class="--btn-sub" type="button" value="-"/>
                 <input class="--input-num" type="text" value="1"/>
                 <input class="--btn-add" type="button" value="+"/>
               </div>
               <div class="product-detail__info__features__item__buy block__item__info-bot__buy">
-                <button class="--buy-now btn-buy-now uppercase">Mua ngay</button><a class="--more-info btn-more-pr-info" href="#"><i class="fa fa-search" aria-hidden="true"></i></a><a class="--love-product btn-love-pr" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                <button class="--buy-now btn-buy-now uppercase" onClick="buyNow(this);">Mua ngay</button><a class="--more-info btn-more-pr-info" href="#"><i class="fa fa-search" aria-hidden="true"></i></a><a class="--love-product btn-love-pr" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
               </div>
               <div class="product-detail__info__features__item__social">
                 <div class="--btn-fb"><a href="#"><img src="images/fb.png"/></a>
@@ -124,28 +128,8 @@
             </div>
           </section>
           <section class="product-detail__desc">
-            <div class="product-detail__desc__tab uppercase"><a class="product-detail__desc__tab__info --tab-active" href="#">Thông tin sản phẩm</a><a class="product-detail__desc__tab__review" href="#">Khác hàng dánh giá</a><a class="product-detail__desc__tab__tag" href="#">Thẻ tag</a></div>
-            <div class="product-detail__desc__text">
-              <p>Tên phổ thông: Dạ lam, Huỳnh tinh cảnh, Dong vằn.
-
-Tên khoa học: Calathea zebrina
-
-Họ thực vật: Marantaceae (Củ dong).
-
-Chiều cao: 0,8-1,2m
-
-Cây dạ lam có nguồn gốc từ Brazil, được du nhập và phân bố rộng khắp ở Việt Nam.
-
-Cây mọc thành bụi thưa, thân vươn thẳng với chiều cao cây trung bình từ 0,8-1,2m. Lá hình trứng, mép lá nguyên, gân lá nổi rõ, phiến rộng khoảng từ 15-20cm. Lá có màu xanh đậm ở mặt trên, quanh gân lá có màu trắng sữa; mặt dưới lá nhạt màu hơn. Lá cây dạ lam mọc cách, cuống lá dài khi rụng để lại các khía màu nâu nhạt.
-
-Cây dạ lam thuộc loại cây chịu bóng bán phần hoặc hoàn toàn, nhu cầu nước tương đối cao. Cây được nhân giống từ tách bụi, cây mọc khỏe, tốc độ sinh trưởng nhanh với sức sống mạnh.
-
-Đây là loại cây có dáng đẹp, màu lá mướt mát, tươi khỏe, cây rất phù hợp trồng chậu trang trí nội thất-văn phòng.
-
-Ngoài ra, cây còn có đặc điểm lọc khí, làm xanh mát môi trường, giúp điều hòa không khí, đặc biệt tốt cho những môi trường thường xuyên sử dụng các loại máy móc tảng nhiệt. Có thể bày cây ở hành lang hay ở giữa sảnh, đặt ở cạnh bàn làm việc hoặc trang trí các góc phòng có diện tích trung bình.
-
-Quý khách có thể tham khảo thêm về cách chăm sóc cây qua bài viết sau: HD chăm sóc cây hoa cảnh.</p>
-            </div>
+            <div class="product-detail__desc__tab uppercase"><a class="product-detail__desc__tab__info --tab-active" href="#">Thông tin sản phẩm</a><a class="product-detail__desc__tab__review" href="#">Khách hàng dánh giá</a><a class="product-detail__desc__tab__tag" href="#">Thẻ tag</a></div>
+            <div id="product-detail__full-desc" class="product-detail__desc__text"></div>
           </section>
           <section class="product-detail__similar">
             <h4 class="heading-section-pr">Sản phẩm cùng loại</h4>
@@ -157,7 +141,7 @@ Quý khách có thể tham khảo thêm về cách chăm sóc cây qua bài vi�
                   <div class="block__item__info-top__image"><img src="../../images/sp/spx2-4.png"/></div>
                   <div class="block__item__info-top__desc label-pr-new"><span>NEW</span></div>
                   <div class="block__item__info-top__buy">
-                    <button class="--buy-now btn-buy-now uppercase">Mua ngay</button><a class="--more-info btn-more-pr-info" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    <button class="--buy-now btn-buy-now uppercase" onclick="buyNow();">Mua ngay</button><a class="--more-info btn-more-pr-info" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
                   </div>
                   <div class="block__item__info-top__cover"></div>
                 </div>
@@ -390,5 +374,6 @@ Quý khách có thể tham khảo thêm về cách chăm sóc cây qua bài vi�
         </div>
       </footer>
     </div>
+    <script src="../js/js.js"></script>
   </body>
 </html>

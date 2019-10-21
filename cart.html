@@ -40,7 +40,7 @@
                         <input class="header__top__mid__right__below__search__input" placeholder="Tìm kiếm"/>
                         <button class="header__top__mid__right__below__search__submit-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                       </div>
-                      <div class="header__top__mid__right__below__cart"><i class="fa fa-shopping-basket header__top__mid__right__below__cart__icon"></i><span class="header__top__mid__right__below__cart__total">0 Sản phẩm</span></div>
+                      <div class="header__top__mid__right__below__cart"><i class="fa fa-shopping-basket header__top__mid__right__below__cart__icon"></i><a href="cart.html" class="header__top__mid__right__below__cart__total"><span id="header__top__mid__right__below__cart__total">0</span> Sản phẩm</a></div>
                     </div>
                   </div>
                 </div>
@@ -90,12 +90,14 @@
         <div class="cart__container max-src margin-auto">
           <section class="cart__cate-path cate-path"><a class="products__cate-path__link" href="index.html">Home</a> / <a class="products__cate-path__link --cate-active" href="#">Giỏ hàng</a></section>
           <div class="cart__title">
-            <h4 class="uppercase">Giỏ hàng</h4>
+            <a href="cart.html"><h4 class="uppercase cart__title--actived">Giỏ hàng</h4></a>
+            <a href="checkout.html"><h4 class="uppercase cart__title--not-ready">Thông tin thanh toán</h4></a>
+            <a href="confirm-order.html"><h4 class="uppercase cart__title--not-ready">Xác nhận</h4></a>
           </div>
           <div class="cart__bought">
             <form class="cart__bought__form" action="#">
               <table class="cart__bought__form__table">
-                <tbody>
+                <tbody id="cart__bought__form__body">
                   <tr class="cart__bought__form__table__header uppercase">
                     <th>Hình ảnh</th>
                     <th>Tên sản phẩm</th>
@@ -104,60 +106,30 @@
                     <th>Thành tiền</th>
                     <th>Xóa</th>
                   </tr>
-                  <tr class="cart__bought__form__table__item">
-                    <td class="cart__bought__form__table__item__image"><a href="#"><img src="../../images/sp/spx2-2.png"/></a></td>
-                    <td class="uppercase cart__bought__form__table__item__name"><a href="#">Cây văn phòng</a></td>
-                    <td class="cart__bought__form__table__item__price"><span>270.000 đ</span></td>
-                    <td class="cart__bought__form__table__item__amount">
-                      <input type="number" value="1" step="1"/>
-                    </td>
-                    <td class="cart__bought__form__table__item__total"><span>270.000 đ</span></td>
-                    <td class="cart__bought__form__table__item"><a class="cart__bought__form__table__item__trash-icon" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                  </tr>
-                  <tr class="cart__bought__form__table__item">
-                    <td class="cart__bought__form__table__item__image"><a href="#"><img src="../../images/sp/spx2-3.png"/></a></td>
-                    <td class="uppercase cart__bought__form__table__item__name"><a href="#">Cây văn phòng</a></td>
-                    <td class="cart__bought__form__table__item__price"><span>270.000 đ</span></td>
-                    <td class="cart__bought__form__table__item__amount">
-                      <input type="number" value="1" step="1"/>
-                    </td>
-                    <td class="cart__bought__form__table__item__total"><span>270.000 đ</span></td>
-                    <td class="cart__bought__form__table__item"><a class="cart__bought__form__table__item__trash-icon" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                  </tr>
-                  <tr class="cart__bought__form__table__item">
-                    <td class="cart__bought__form__table__item__image"><a href="#"><img src="../../images/sp/spx2-4.png"/></a></td>
-                    <td class="uppercase cart__bought__form__table__item__name"><a href="#">Cây văn phòng</a></td>
-                    <td class="cart__bought__form__table__item__price"><span>270.000 đ</span></td>
-                    <td class="cart__bought__form__table__item__amount">
-                      <input type="number" value="1" step="1"/>
-                    </td>
-                    <td class="cart__bought__form__table__item__total"><span>270.000 đ</span></td>
-                    <td class="cart__bought__form__table__item"><a class="cart__bought__form__table__item__trash-icon" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                  </tr>
                 </tbody>
               </table>
               <div class="cart__bought__form__action">
-                <button class="cart__bought__form__action__cancel uppercase">Hủy đơn hàng</button>
-                <button class="cart__bought__form__action__continue uppercase">Tiếp tục mua</button>
+                <button class="cart__bought__form__action__cancel uppercase" onClick="cancelCart(); return false">Hủy đơn hàng</button>
+                <button class="cart__bought__form__action__continue uppercase"><a href="index.html">Tiếp tục mua</a></button>
               </div>
               <div class="cart__bought__form__total uppercase">
                 <table>
                   <tr class="cart__bought__form__total__none-vat">
                     <td>Tổng tiền (Chưa thuế)</td>
-                    <td>270.000 đ</td>
+                    <td id="total-none-vat"></td>
                   </tr>
                   <tr class="cart__bought__form__total__vat">
                     <td>Thuế (VAT: 10%)</td>
-                    <td>27.000 đ</td>
+                    <td id="total-has-vat"></td>
                   </tr>
                   <tr class="cart__bought__form__total__final">
                     <td>Tổng phải thanh toán</td>
-                    <td>297.000 đ</td>
+                    <td id="total-final"></td>
                   </tr>
                 </table>
               </div>
               <div class="cart__bought__form__pay-btn uppercase">
-                <button class="cart__bought__form__pay-btn__order uppercase">Thanh toán</button>
+                <button class="cart__bought__form__pay-btn__order uppercase"><a href="checkout.html">Thanh toán</a></button>
               </div>
             </form>
           </div>
@@ -313,5 +285,6 @@
         </div>
       </footer>
     </div>
+    <script src="../js/js.js"></script>
   </body>
 </html>

@@ -1,0 +1,169 @@
+{
+  "products": [
+    { 
+      "id": 1,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "1",
+      "img": "spx2-1.png"
+    },
+    { 
+      "id": 2,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "2",
+      "img": "spx2-2.png"
+    },
+    { 
+      "id": 3,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "3",
+      "img": "spx2-3.png"
+    },
+    { 
+      "id": 4,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "4",
+      "img": "spx2-4.png"
+    },
+    { 
+      "id": 6,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "6",
+      "img": "spx2-5.png"
+    },
+    { 
+      "id": 9,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "9",
+      "img": "spx2-6.png"
+    },
+    { 
+      "id": 12,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "12",
+      "img": "spx2-7.png"
+    },
+    { 
+      "id": 22,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "12",
+      "img": "spx2-8.png"
+    },
+    { 
+      "id": 21,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "12",
+      "img": "spx2-9.png"
+    },
+    { 
+      "id": 19,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "12",
+      "img": "spx2-10.png"
+    },
+    { 
+      "id": 87,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "12",
+      "img": "spx2-11.png"
+    },
+    { 
+      "id": 90,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "12",
+      "img": "spx2-12.png"
+    },
+    { 
+      "id": 121,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "12",
+      "img": "spx2-13.png"
+    },
+    { 
+      "id": 25,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "12",
+      "img": "spx2-14.png"
+    },
+    { 
+      "id": 32,
+      "name": "Cây danh dự",
+      "price": "780",
+      "promo_price": "250",
+      "desc": "null",
+      "long_desc": "Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng \"người ấy\". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá xanh đốm trắng.",
+      "rating": 9,
+      "url": "12",
+      "img": "spx2-15.png"
+    },
+  ]
+}

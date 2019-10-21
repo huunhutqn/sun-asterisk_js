@@ -2,6 +2,7 @@
 # /images/*
 # /webfonts/*
 /scss/.sass-cache/*
+/backup/*
 
 # # Ignore files
 # /index.html
